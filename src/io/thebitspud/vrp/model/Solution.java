@@ -13,7 +13,7 @@ public class Solution {
 
     /** Generates a new solution with random parameters */
     public Solution() {
-        // location 0 at start and end of every path
+        // location 0 is at the start and end of every path, no need to include
         routes = new int[Main.LOCATION_COUNT + Main.FLEET_SIZE - 2];
         Arrays.setAll(routes, i -> i + 1);
 
@@ -33,7 +33,7 @@ public class Solution {
         mutate();
     }
 
-    /** Creates a new solution by crossing two parents, then mutating */
+    /** Creates a new solution by crossing two parents */
     public Solution(Solution p1, Solution p2) {
         this.routes = new int[p1.routes.length];
         Arrays.fill(routes, -1);

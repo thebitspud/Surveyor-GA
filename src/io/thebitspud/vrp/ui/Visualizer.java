@@ -14,6 +14,8 @@ import java.awt.Point;
  * Draws the best solution in a population to the screen
  */
 public class Visualizer extends JPanel {
+    private static final int FPS = 30;
+
     private Population pop;
     private Display display;
 
@@ -27,7 +29,7 @@ public class Visualizer extends JPanel {
 
     /** Starts the application loop */
     private void start() {
-        Timer t = new Timer(1000 / 30, ae -> repaint());
+        Timer t = new Timer(1000 / FPS, ae -> repaint());
         t.start();
     }
 

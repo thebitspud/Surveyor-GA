@@ -25,7 +25,7 @@ public class LocationMap implements FitnessFunction {
     }
 
     /**
-     * Returns the sum of squared distances travelled by a candidate solution<br>
+     * Returns the sum of squared path lengths travelled by a candidate solution<br>
      * Lower numbers are considered more fit
      */
     @Override
