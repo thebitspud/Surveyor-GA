@@ -57,7 +57,7 @@ public class Visualizer extends JPanel {
                 // Drawing lines between path locations
                 Point p1 = m.getLocation(s.getRoutes(i));
                 Point p2 = m.getLocation(s.getRoutes(i + 1));
-                g.setColor(Color.DARK_GRAY);
+                g.setColor(new Color(90, 110, 130));
                 g.drawLine(p1.x + 50, p1.y + 50, p2.x + 50, p2.y + 50);
             }
         }
@@ -66,7 +66,7 @@ public class Visualizer extends JPanel {
         g.setColor(Color.BLACK);
         for (int i = 0; i < Main.LOCATION_COUNT; i++) {
             Point p1 = m.getLocation(i);
-            g.fillOval(p1.x + 47, p1.y + 47, 7, 7);
+            g.fillRect(p1.x + 48, p1.y + 48, 5, 5);
         }
 
         // Drawing base node
@@ -74,6 +74,9 @@ public class Visualizer extends JPanel {
         g.fillOval(base.x + 46, base.y + 46, 8, 8);
         g.drawRect(45, 45, 510, 510);
 
-        display.setTitle("Generation " + pop.getGeneration());
+        display.setTitle(
+                "Nodes: " + Main.LOCATION_COUNT
+                + " | Agents: " + Main.FLEET_SIZE
+                + " | Generation: " + pop.getGeneration());
     }
 }
